@@ -13,3 +13,6 @@ function MyApp1() {
   );
 }
 export default MyApp1;
+
+// 리액트에서는 보통 JSX라는 문법을 사용해 UI를 작성
+// JSX는 JavaScript와 HTML을 결합한 형태인데, 실제로는 HTML 태그처럼 보임
