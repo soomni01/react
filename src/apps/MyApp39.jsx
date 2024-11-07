@@ -2,27 +2,31 @@ import React, { useState } from "react";
 import { Button } from "../components/ui/button.jsx";
 import { Box } from "@chakra-ui/react";
 
-function MyApp39(props) {
-  const [text, setText] = useState("숨기기");
-  const [show, setShow] = useState(true);
-
-  function handleButtonClick() {
-    if (text === "숨기기") {
-      setText("보이기");
-    } else {
-      setText("숨기기");
-    }
-
-    setShow(!show);
-  }
+function App39(props) {
+  const [number, setNumber] = useState(1);
+  let handleButtonClick = () => {
+    setNumber((number % 3) + 1);
+  };
   return (
     <div>
-      <Button onClick={handleButtonClick}>{text}</Button>
-      <Box display={show ? "block" : "none"} h={20} bg={"blue.200"}>
-        박스
-      </Box>
+      <Button onClick={handleButtonClick}>{number}</Button>
+      {number === 1 && (
+        <Box h={20} bg={"blue.300"}>
+          1
+        </Box>
+      )}
+      {number === 2 && (
+        <Box h={20} bg={"red.300"}>
+          2
+        </Box>
+      )}
+      {number === 3 && (
+        <Box h={20} bg={"yellow.300"}>
+          3
+        </Box>
+      )}
     </div>
   );
 }
 
-export default MyApp39;
+export default App39;
