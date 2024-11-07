@@ -3,10 +3,18 @@ import { Input, Textarea } from "@chakra-ui/react";
 import { Field } from "../components/ui/field.jsx";
 import { Checkbox } from "../components/ui/checkbox.jsx";
 import { HiOutlinePlus } from "react-icons/hi2";
+import { Radio, RadioGroup } from "../components/ui/radio.jsx";
 
 function MyApp28(props) {
   return (
     <div style={{ margin: "10px" }}>
+      <h5>radio button</h5>
+      <RadioGroup>
+        <Radio value={1}>option1</Radio>
+        <Radio value={2}>oprion2</Radio>
+        <Radio value={3}>oprtion3</Radio>
+      </RadioGroup>
+      <hr />
       <h5>checkbox</h5>
       <Checkbox icon={<HiOutlinePlus />}>동의</Checkbox>
       <Checkbox variant="outline" checked>
