@@ -1,25 +1,40 @@
 import React from "react";
-import { HStack, Input, Textarea } from "@chakra-ui/react";
+import { HStack, Icon, Input, Textarea } from "@chakra-ui/react";
 import { Field } from "../components/ui/field.jsx";
 import { Checkbox } from "../components/ui/checkbox.jsx";
 import { HiCheck, HiOutlinePlus } from "react-icons/hi2";
 import { Radio, RadioGroup } from "../components/ui/radio.jsx";
 import { Switch } from "../components/ui/switch.jsx";
 import { HiX } from "react-icons/hi";
+
 import {
   RadioCardItem,
   RadioCardLabel,
   RadioCardRoot,
 } from "../components/ui/radio-card.jsx";
+import { FaApplePay, FaHouseUser } from "react-icons/fa6";
 
 function MyApp28(props) {
   return (
     <div style={{ margin: "10px" }}>
       <h5>radio card</h5>
+      <FaHouseUser />
+      <span style={{ fontSize: "3em", color: "darkseagreen" }}>
+        <FaApplePay />
+      </span>
       <RadioCardRoot>
         <RadioCardLabel>결제 수단</RadioCardLabel>
         <HStack>
-          <RadioCardItem indicator={null} value={1} label="Apple Pay" />
+          <RadioCardItem
+            icon={
+              <Icon fontSize="3xl">
+                <FaApplePay />
+              </Icon>
+            }
+            indicator={null}
+            value={1}
+            label="Apple Pay"
+          />
           <RadioCardItem indicator={null} value={2} label="Samsung Pay" />
           <RadioCardItem indicator={null} value={3} label="Naver Pay" />
           <RadioCardItem indicator={null} value={4} label="Kakao Pay" />
