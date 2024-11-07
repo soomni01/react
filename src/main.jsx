@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import MyApp34 from "./practice/App34.jsx";
+import MyApp34 from "./apps/MyApp36.jsx";
 import { Provider } from "./components/ui/provider.jsx";
 import { Toaster } from "./components/ui/toaster.jsx";
 
