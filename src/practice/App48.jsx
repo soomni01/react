@@ -27,18 +27,21 @@ function MyBox({ name, address }) {
 function App48(props) {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  // const [person, setPerson] = useState({ name: "", address: "" });
 
-  function updateName(p) {
-    setName(p);
+  function updateName(n) {
+    setName(n);
   }
-  function updateAddress(p) {
-    setAddress(p);
+  function updateAddress(a) {
+    setAddress(a);
   }
 
   return (
     <div>
       <MyForm updateName={updateName} updateAddress={updateAddress} />
       <MyBox name={name} address={address} />
+      {/*<MyForm updateName={updateName} updateAddress={updateAddress} />*/}
+      {/*<MyBox {...person} />*/}
     </div>
   );
 }
