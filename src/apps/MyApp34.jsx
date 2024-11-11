@@ -1,39 +1,55 @@
 import React from "react";
 import { Button } from "../components/ui/button.jsx";
+import { toaster } from "../components/ui/toaster.jsx";
 
-function MyApp33(props) {
-  function fun1() {
-    console.log("버튼클릭됨!");
-  }
-  const fun2 = function () {
-    console.log("펀2 함수");
-  };
-  const fun3 = () => {
-    console.log("펀3 함수");
-  };
-
+function MyApp34(props) {
   return (
     <div>
-      <Button onClick={fun3}>차크라ui 버튼</Button>
-      <button onClick={fun2}>또 다른 버튼</button>
-      <button onClick={fun1}>다른 버튼</button>
-      <button onClick={fun1}>버튼1</button>
-      <button
-        onClick={function () {
-          console.log("두번째 버튼 클릭됨");
-        }}
-      >
-        버튼2
-      </button>
-      <button
+      <Button
         onClick={() => {
-          console.log("세번째 버튼");
+          toaster.create({
+            description: "안내메세지",
+            type: "success",
+            duration: 10000,
+          });
         }}
       >
-        버튼3
-      </button>
+        성공
+      </Button>
+      <Button
+        onClick={() => {
+          toaster.create({ description: "안내메세지", type: "error" });
+        }}
+      >
+        실패
+      </Button>
+      <Button
+        onClick={() => {
+          toaster.create({ description: "안내메세지", type: "info" });
+        }}
+      >
+        정보
+      </Button>
+      <Button
+        onClick={() => {
+          toaster.create({ description: "안내메세지", type: "warning" });
+        }}
+      >
+        주의
+      </Button>
+
+      <hr />
+      <Button
+        onClick={() => {
+          toaster.create({
+            description: "안내 메세지!!!!",
+          });
+        }}
+      >
+        토스트1
+      </Button>
     </div>
   );
 }
 
-export default MyApp33;
+export default MyApp34;
