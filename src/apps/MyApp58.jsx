@@ -11,6 +11,10 @@ function MyApp58(props) {
   p.append("city", "부산"); // name=hankang&age=55&city=서울&city=부산
   p.set("city", "제주"); // name=hankang&age=55&city=제주
 
+  const q = new URLSearchParams();
+  q.append("email", "gmail");
+  q.append("title", "소년이 온다");
+  q.append("author", "한강");
   return (
     <div>
       <Button
@@ -19,7 +23,7 @@ function MyApp58(props) {
           //  요청파라미터 email: gmail
           //            title : 소년이 온다
           //           author : 한강
-          axios.get("/hi");
+          axios.get(`/hi?${q}`);
         }}
       >
         btn5
