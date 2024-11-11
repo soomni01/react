@@ -17,9 +17,11 @@ function MyApp52(props) {
         checked={show}
         onCheckedChange={(e) => setShow(e.checked)}
       ></Switch>
-      {show && <MyComp1 />}
+      {/* 아래는 unmount 된 것이기 때문에 새로고침 효과와 같음 -> 값 초기화 */}
+      {/*{show && <MyComp1 />}*/}
 
       <hr />
+      {/* unmount 가 아닌 그냥 숨긴 것이기 때문에 값 유지됨*/}
       <Box display={show ? "block" : "none"}>
         <MyComp1 />
       </Box>
