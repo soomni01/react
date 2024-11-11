@@ -16,7 +16,15 @@ function MyComp1({ text }) {
   }, [text]);
 
   useEffect(() => {
-    console.log("count 변경됨");
+    console.log("count 변경됨", count);
+
+    // 언마운트,
+    // 또는 이전 useEffect의 리턴된 함수가 현재 render의 useEffect 함수 실행 전에 실행됨
+    // clean up 함수
+    return () => {
+      // 처음 mount되면 "count 변경됨" 출력/"언마운트 0" 리턴 -> count트리거 값 변경 시 리턴된 "언마운터 0"출력 후 "count " 출력
+      console.log("언마운트@", count);
+    };
   }, [count]);
 
   useEffect(() => {
