@@ -1,26 +1,22 @@
 import React, { useState } from "react";
+import { Box, Input } from "@chakra-ui/react";
+import { Button } from "../components/ui/button.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
-  useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import { Box, Input } from "@chakra-ui/react";
-import { Button } from "../components/ui/button.jsx";
 
-function MyHome() {
+function Home() {
   const [keyword, setKeyword] = useState("");
-  const navigate = useNavigate();
   const [params, setParams] = useSearchParams();
-
-  console.log(params.toString());
 
   return (
     <Box>
       <Input value={keyword} onChange={(e) => setKeyword(e.target.value)} />
       <Button
         onClick={() => {
-          const p = new URLSearchParams();
+          const p = new URLSearchParams(params);
           p.set("keyword", keyword);
           setParams(p);
         }}
@@ -30,15 +26,9 @@ function MyHome() {
       <hr />
       <Button
         onClick={() => {
-          // const p = new URLSearchParams();
-          // p.append("page", 1);
-          // setParams(p);
-          // params.append("page", 1);
-          // setParams(params);
-
-          const nextParam = new URLSearchParams(params);
-          nextParam.set("page", 1);
-          setParams(nextParam);
+          const p = new URLSearchParams(params);
+          p.set("page", 1);
+          setParams(p);
         }}
       >
         1
@@ -67,12 +57,13 @@ function MyHome() {
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <MyHome />,
+    path: "",
+    element: <Home />,
   },
 ]);
-function MyApp76(props) {
+
+function App76(props) {
   return <RouterProvider router={router} />;
 }
 
-export default MyApp76;
+export default App76;
