@@ -13,7 +13,8 @@ function MyApp80(props) {
           console.log(decoded);
           console.log("id", decoded.sub);
           console.log("권한", decoded.scope);
-          console.log("유효기간", Date(decoded.exp));
+          console.log("유효기간", new Date(decoded.exp * 1000));
+          console.log("발행시간", new Date(decoded.iat * 1000));
         }}
       >
         jwt 디코딩 해서 보기
