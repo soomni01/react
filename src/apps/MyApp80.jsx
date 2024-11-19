@@ -7,6 +7,18 @@ function MyApp80(props) {
     <div>
       <Button
         onClick={() => {
+          axios.get("/api/main9/sub10", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        사용자 정보
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
           axios.get("/api/main9/sub4").then((res) => {
             localStorage.setItem("token", res.data);
           });
