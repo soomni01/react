@@ -7,6 +7,55 @@ function MyApp80(props) {
     <div>
       <Button
         onClick={() => {
+          axios.get("/api/main9/sub4").then((res) => {
+            localStorage.setItem("token", res.data);
+          });
+        }}
+      >
+        어드민
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub5").then((res) => {
+            localStorage.setItem("token", res.data);
+          });
+        }}
+      >
+        매니저
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub6").then((res) => {
+            localStorage.setItem("token", res.data);
+          });
+        }}
+      >
+        어드민 매니저
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub7");
+        }}
+      >
+        어드민만 가능 요청
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub8");
+        }}
+      >
+        매니저만 가능 요청
+      </Button>
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub9");
+        }}
+      >
+        어드민/매니저만 가능 요청
+      </Button>
+      <hr />
+      <Button
+        onClick={() => {
           axios.get("/api/main9/sub1").then((res) => {
             const token = res.data;
             // console.log(token);
