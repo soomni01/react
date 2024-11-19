@@ -34,21 +34,33 @@ function MyApp80(props) {
       </Button>
       <Button
         onClick={() => {
-          axios.get("/api/main9/sub7");
+          axios.get("/api/main9/sub7", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
         }}
       >
         어드민만 가능 요청
       </Button>
       <Button
         onClick={() => {
-          axios.get("/api/main9/sub8");
+          axios.get("/api/main9/sub8", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
         }}
       >
         매니저만 가능 요청
       </Button>
       <Button
         onClick={() => {
-          axios.get("/api/main9/sub9");
+          axios.get("/api/main9/sub9", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
         }}
       >
         어드민/매니저만 가능 요청
